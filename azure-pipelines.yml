@@ -1,0 +1,61 @@
+trigger:
+  branches:
+    include:
+    - master
+    - release/v*
+  tags:
+    include:
+    - v*
+
+pool:
+  vmImage: ubuntu-16.04
+
+variables:
+  - group: SonarQube
+
+steps:
+  - task: NuGetCommand@2
+    displayName: 'Update hchb-nuget.org Source'
+    inputs:
+      command: custom
+      arguments: 'sources update -Name hchb-nuget.org -UserName VSTS -Password $(System.AccessToken) -ConfigFile NuGet.config -StorePasswordInClearText'
+
+  - task: NuGetCommand@2
+    displayName: 'Update hchb-internal Source'
+    inputs:
+      command: custom
+      arguments: 'sources update -Name hchb-internal -UserName VSTS -Password $(System.AccessToken) -ConfigFile NuGet.config -StorePasswordInClearText'
+
+  - task: UseDotNet@2
+    displayName: 'Install .Net Core SDK 2.1.x'
+    inputs:
+      version: 2.1.x
+
+  - task: UseDotNet@2
+    displayName: 'Install .Net Core SDK 3.1.x'
+    inputs:
+      version: 3.1.x
+
+  - bash: |
+      sudo apt-get update
+      sudo apt-get install -y libgit2-dev 
+      sudo ln -s /usr/lib/x86_64-linux-gnu/libgit2.so /lib/x86_64-linux-gnu/libgit2-15e1193.so
+    displayName: 'Install libgit2-dev'
+
+  - task: DotNetCoreCLI@2
+    displayName: Restore dotnet tools
+    inputs:
+      command: custom
+      custom: tool
+      arguments: restore
+
+  - task: DotNetCoreCLI@2
+    displayName: 'Run Cake'
+    inputs:
+      command: custom
+      custom: tool
+      arguments: run dotnet-cake -- build.cake -Target=$(Cake.Target) -Verbosity=$(Cake.Verbosity)
+    env:
+      SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+      SONARQUBE_TOKEN: $(SonarQube.Token)
+      NUGET_APIKEY: $(System.AccessToken)

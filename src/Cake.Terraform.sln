@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.12
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.Terraform", "Cake.Terraform\Cake.Terraform.csproj", "{C6E9A60F-9055-4E54-9E29-7F277875ABC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cake.Terraform", "Cake.Terraform\Cake.Terraform.csproj", "{C6E9A60F-9055-4E54-9E29-7F277875ABC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.Terraform.Tests", "Cake.Terraform.Tests\Cake.Terraform.Tests.csproj", "{AB9EDCDE-48B6-4B6E-B0B6-28CF549A6591}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cake.Issues.Terraform", "Cake.Issues.Terraform\Cake.Issues.Terraform.csproj", "{D8929A4F-10DE-46D3-910D-460FC2C4192B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cake.Terraform.Tests", "Cake.Terraform.Tests\Cake.Terraform.Tests.csproj", "{6CEC5D85-8843-48E3-99F6-ED818E906DD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +19,19 @@ Global
 		{C6E9A60F-9055-4E54-9E29-7F277875ABC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6E9A60F-9055-4E54-9E29-7F277875ABC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6E9A60F-9055-4E54-9E29-7F277875ABC1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AB9EDCDE-48B6-4B6E-B0B6-28CF549A6591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AB9EDCDE-48B6-4B6E-B0B6-28CF549A6591}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AB9EDCDE-48B6-4B6E-B0B6-28CF549A6591}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AB9EDCDE-48B6-4B6E-B0B6-28CF549A6591}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8929A4F-10DE-46D3-910D-460FC2C4192B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8929A4F-10DE-46D3-910D-460FC2C4192B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8929A4F-10DE-46D3-910D-460FC2C4192B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8929A4F-10DE-46D3-910D-460FC2C4192B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CEC5D85-8843-48E3-99F6-ED818E906DD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CEC5D85-8843-48E3-99F6-ED818E906DD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CEC5D85-8843-48E3-99F6-ED818E906DD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CEC5D85-8843-48E3-99F6-ED818E906DD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36BC7065-7E07-4C48-A799-F3897E7B2BDE}
 	EndGlobalSection
 EndGlobal

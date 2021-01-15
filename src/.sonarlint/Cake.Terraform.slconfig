@@ -1,0 +1,12 @@
+{
+  "ServerUri": "https://sonarqube.hchb.com",
+  "Organization": null,
+  "ProjectKey": "Cake.Terraform",
+  "ProjectName": "Cake.Terraform",
+  "Profiles": {
+    "CSharp": {
+      "ProfileKey": "AWRqN_hwsqpIZ8cN17Sd",
+      "ProfileTimestamp": "2020-08-06T14:46:01Z"
+    }
+  }
+}
